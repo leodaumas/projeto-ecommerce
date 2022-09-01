@@ -1,0 +1,9 @@
+$('.banners').owlCarousel({
+    autoplay:true,
+    autoplayTimeout:3000,
+    autoplayHoverPause:true,
+    loop:true,
+    nav:false,
+    dots:true,
+    items:1
+})
