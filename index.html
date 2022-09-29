@@ -11,6 +11,8 @@
     <link href="https://fonts.googleapis.com" rel="preconnect">
     <link crossorigin href="https://fonts.gstatic.com" rel="preconnect">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v15.0" nonce="GyusPHdt"></script>
     <title>Bootstrap</title>
 </head>
 <body class="bg-black">
@@ -195,7 +197,40 @@
 
         </div>
     </div>
+</section>
 
+<!--Destaques de vendas-->
+<section class="my-5">
+    <div class="container">
+        <div class="row">
+            <div class="mb-1"><span class="fs-3 text-uppercase fw-bold">Destaques de vendas</span></div>
+            <div class="owl-carousel owl-theme destaque-venda">
+
+                <div class="bg-light pb-4">
+                    <img alt="#." class="img-fluid" src="https://via.placeholder.com/300x250"/>
+                    <div class="px-3">
+                        <div class="mb-3"><span class="fw-bold small lh-sm">Freezer Horizontal D/a Ghbs-50 Bn 532 Litros 2 Tampas Cega 127V - Gelopar</span></div>
+                        <div class="text-decoration-line-through small"><span>R$ 5.027,54</span></div>
+                        <div class="mb-3"><span class="fw-bold text-primary">R$ 4.524,79</span></div>
+                        <div><small class="fw-bold small">À vista no PIX</small></div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Banner rodapé -->
+<section>
+    <div class="owl-carousel owl-theme banners">
+        <img alt="banner" class="w-auto img-fluid" src="https://via.placeholder.com/1900x1000/111111"/>
+        <img alt="banner" class="w-auto img-fluid" src="https://via.placeholder.com/1900x1000/222222"/>
+        <img alt="banner" class="w-auto img-fluid" src="https://via.placeholder.com/1900x1000/333333"/>
+        <img alt="banner" class="w-auto img-fluid" src="https://via.placeholder.com/1900x1000/444444"/>
+        <img alt="banner" class="w-auto img-fluid" src="https://via.placeholder.com/1900x1000/555555"/>
+        <img alt="banner" class="w-auto img-fluid" src="https://via.placeholder.com/1900x1000/777777"/>
+    </div>
 </section>
 
 <!--Parceiros-->
@@ -209,20 +244,57 @@
             </div>
         </div>
     </div>
-
 </section>
 
 <!--Footer-->
-<footer class="bg-secondary py-3">
+<footer class="bg-secondary py-3 text-white">
     <div class="container">
         <div class="row">
-            <div class="text-center">
-                Rodapé
+            <div class="col-md-6 col-lg-2 mb-3 mb-lg-0">
+                <div class="mb-1"><span class="fs-5">Mapa do site</span></div>
+                <nav class="d-grid">
+                    <a href="#" class="text-decoration-none text-light">Link #1</a>
+                    <a href="#" class="text-decoration-none text-light">Link #2</a>
+                    <a href="#" class="text-decoration-none text-light">Link #3</a>
+                    <a href="#" class="text-decoration-none text-light">Link #4</a>
+                </nav>
+            </div>
+
+            <div class="col-md-6 col-lg-3 mb-3 mb-lg-0">
+                <div class="mb-1"><span class="fs-5">Minha Conta</span></div>
+                <nav class="d-grid">
+                    <a href="#" class="text-decoration-none text-light">Meus pedidos</a>
+                    <a href="#" class="text-decoration-none text-light">Devoluções</a>
+                    <a href="#" class="text-decoration-none text-light">Política de privacidade</a>
+                    <a href="#" class="text-decoration-none text-light">Rastreamento</a>
+                </nav>
+            </div>
+
+            <div class="col-md-6 col-lg-4 mb-3 mb-lg-0">
+                <div class="mb-1"><span class="fs-5">Atendimento</span></div>
+                <div class="d-grid">
+                    <span><b>E-mail:</b> email@contato.com.br</span>
+                    <span><b>Telefone:</b> (35) 99999-9999</span>
+                    <span><b>WhatsApp:</b> (35) 99999-9999</span>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-3 mb-3 mb-lg-0">
+                <div class="mb-1 d-block d-lg-none"><span class="fs-5">Redes sociais</span></div>
+                <div class="mb-2"><div class="fb-page" data-href="https://www.facebook.com/facebook" data-tabs="" data-width="" data-height="" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/facebook" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/facebook">Facebook</a></blockquote></div></div>
+                <nav>
+                    <a href="#" class="text-decoration-none text-light fs-5"><i class="fa fa-whatsapp"></i></a>
+                    <a href="#" class="text-decoration-none text-light fs-5"><i class="fa fa-facebook-square"></i></a>
+                    <a href="#" class="text-decoration-none text-light fs-5"><i class="fa fa-linkedin"></i></a>
+                </nav>
+            </div>
+
+            <div class="text-center mt-3">
+                <span>Desenvolvido por Leonardo</span>
             </div>
         </div>
     </div>
 </footer>
-
 
 <script src="./assets/js/jquery-3.5.0.js"></script>
 <script src="./assets/js/bootstrap.bundle.min.js"></script>
@@ -231,3 +303,11 @@
 <script src="./assets/js/custom.js"></script>
 </body>
 </html>
+
+<!--col- -->
+<!--col-xs-->
+<!--col-sm- -->
+<!--col-md- -->
+<!--col-lg- -->
+<!--col-xl- -->
+<!--col-xxl-->
