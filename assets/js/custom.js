@@ -1,3 +1,10 @@
+$('.menu-links').owlCarousel({
+    loop:true,
+    center: true,
+    autoWidth:false,
+    items: 5
+})
+
 $('.banners').owlCarousel({
     autoplay:true,
     autoplayTimeout:30000,
