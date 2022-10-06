@@ -16,18 +16,45 @@
     <title>Bootstrap</title>
 </head>
 <body class="bg-black">
-<header class="bg-white">
-    <div class="area-header my-3">
+
+<nav class="d-block d-md-none navbar navbar-expand-lg navbar-dark bg-dark mb-3 position-fixed w-100 top-0 z-index2">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#"><img alt="Logotipo" class="w-auto img-fluid" src="https://via.placeholder.com/300x50"/></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">Início</a></li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Categorias
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="#">Link #1</a></li>
+                        <li><a class="dropdown-item" href="#">Link #2</a></li>
+                        <li><a class="dropdown-item" href="#">Link #3</a></li>
+                        <li><a class="dropdown-item" href="#">Link #4</a></li>
+                        <li><a class="dropdown-item" href="#">Link #5</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<header class="bg-white mt-5 pt-5 mt-md-0 pt-md-0">
+    <div class="area-header my-md-3">
         <div class="container">
             <div class="row">
-                <div class="col-3">
+                <div class="d-none d-md-block col-3">
                     <div class="logo">
                         <img alt="Logotipo" class="w-auto img-fluid" src="https://via.placeholder.com/400x100"/>
                     </div>
                 </div>
-                <div class="col-6">
+                <div class="col-12 col-md-5 col-lg-6 order-1 order-md-0">
                     <div class="align-content-center d-grid h-100">
-                        <div class="busca">
+                        <div class="busca  my-3 my-md-0">
                             <div class="d-flex border border-2 rounded-3">
                                 <input class="form-control border-0" type="text">
                                 <button class="btn" type="submit"><i class="fa fa-search"></i></button>
@@ -35,23 +62,23 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-3">
-                    <div class="align-content-center d-grid h-100">
+                <div class="col-12 col-md-4 col-lg-3 order-0 order-md-1">
+                    <div class="d-flex align-content-center d-grid h-100 justify-content-center">
                         <div class="botoes-topo d-flex gap-3">
-                            <div class="text-center">
-                                <a class="text-uppercase small text-dark d-grid gap-1" href="#.">
+                            <div class="align-content-around d-grid gap-1 text-center">
+                                <a class="text-uppercase small text-dark d-grid gap-1 text-decoration-none" href="#.">
                                     <i class="fa fa-phone"></i>
                                     Contato
                                 </a>
                             </div>
-                            <div class="d-grid text-center gap-1">
-                                <a class="text-uppercase small text-dark d-grid gap-1" href="#.">
+                            <div class="align-content-around d-grid gap-1 text-center">
+                                <a class="text-uppercase small text-dark d-grid gap-1 text-decoration-none" href="#.">
                                     <i class="fa fa-user"></i>
                                     Login
                                 </a>
                             </div>
-                            <div class="d-grid text-center gap-1">
-                                <a class="text-uppercase small text-dark d-grid gap-1" href="#.">
+                            <div class="align-content-around d-grid gap-1 text-center">
+                                <a class="text-uppercase small text-dark d-grid gap-1 text-decoration-none" href="#.">
                                     <i class="fa fa-shopping-cart"></i>
                                     Carrinho
                                 </a>
@@ -63,40 +90,18 @@
         </div>
     </div>
 
-    <div class="menu-especial bg-light">
+    <div class="menu-especial bg-light d-none d-md-block">
         <div class="container">
             <div class="row">
                 <div class="col-12">
-                    <nav class="navbar navbar-expand-lg navbar-light">
-                        <div class="collapse justify-content-center navbar-collapse" id="navbarSupportedContent">
-                            <ul class="navbar-nav d-flex gap-3 owl-carousel owl-theme menu-links">
-                                <li class="nav-item">
-                                    <a class="nav-link d-grid gap-1 align-items-center justify-content-center text-center" href="#">
-                                        <img class="rounded-circle" src="https://via.placeholder.com/40x40"/>
-                                        <span>Link</span>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link d-grid gap-1 align-items-center justify-content-center text-center" href="#">
-                                        <img class="rounded-circle" src="https://via.placeholder.com/40x40"/>
-                                        <span>Link</span>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link d-grid gap-1 align-items-center justify-content-center text-center" href="#">
-                                        <img class="rounded-circle" src="https://via.placeholder.com/40x40"/>
-                                        <span>Link</span>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link d-grid gap-1 align-items-center justify-content-center text-center" href="#">
-                                        <img class="rounded-circle" src="https://via.placeholder.com/40x40"/>
-                                        <span>Link</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </nav>
+                    <ul class="owl-carousel owl-theme menu-links list-inline mb-0">
+                        <li class="nav-item">
+                            <a class="nav-link d-grid gap-1 align-items-center justify-content-center text-center" href="#">
+                                <img class="rounded-circle" src="https://via.placeholder.com/40x40"/>
+                                <span>Link</span>
+                            </a>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>
@@ -303,11 +308,3 @@
 <script src="./assets/js/custom.js"></script>
 </body>
 </html>
-
-<!--col- -->
-<!--col-xs-->
-<!--col-sm- -->
-<!--col-md- -->
-<!--col-lg- -->
-<!--col-xl- -->
-<!--col-xxl-->

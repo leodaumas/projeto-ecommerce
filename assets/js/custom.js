@@ -1,8 +1,26 @@
 $('.menu-links').owlCarousel({
+    autoplay:true,
+    autoplayTimeout:30000,
+    autoplayHoverPause:true,
     loop:true,
-    center: true,
-    autoWidth:false,
-    items: 5
+    nav:false,
+    dots:true,
+    margin: 10,
+    responsive:{
+        0:{
+            items:4
+        },
+        576:{
+            items:5
+        },
+        992:{
+            items:7
+        },
+        1200:{
+            items:10
+        }
+    }
+
 })
 
 $('.banners').owlCarousel({
