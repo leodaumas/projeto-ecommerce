@@ -41,7 +41,7 @@
 
 <nav class="d-block d-md-none navbar navbar-expand-lg navbar-dark bg-dark mb-3 position-fixed w-100 top-0 z-index2">
     <div class="container-fluid">
-        <a class="navbar-brand" href="#"><img alt="Logotipo" class="w-auto img-fluid" src="https://via.placeholder.com/300x50"/></a>
+        <a class="navbar-brand" href="#"><img alt="Logotipo" class="w-auto img-fluid" src="<?php echo get_field('logo', getPageIDBySlug('configuracoes-gerais')); ?>"/></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -87,24 +87,14 @@
                 <div class="col-12 col-md-4 col-lg-3 order-0 order-md-1">
                     <div class="d-flex align-content-center d-grid h-100 justify-content-center">
                         <div class="botoes-topo d-flex gap-3">
-                            <div class="align-content-around d-grid gap-1 text-center">
-                                <a class="text-uppercase small text-dark d-grid gap-1 text-decoration-none" href="#.">
-                                    <i class="fa fa-phone"></i>
-                                    Contato
+                        <?php while (have_rows('menus_do_cliente', getPageIDBySlug('configuracoes-gerais'))){ the_row(); ?>                   
+                        <div class="align-content-around d-grid gap-1 text-center">
+                                <a class="text-uppercase small text-dark d-grid gap-1 text-decoration-none" href="<?php echo get_sub_field('link'); ?>">
+                                    <i class="fa <?php echo get_sub_field('icone'); ?>"></i>
+                                    <?php echo get_sub_field('titulo'); ?>
                                 </a>
                             </div>
-                            <div class="align-content-around d-grid gap-1 text-center">
-                                <a class="text-uppercase small text-dark d-grid gap-1 text-decoration-none" href="#.">
-                                    <i class="fa fa-user"></i>
-                                    Login
-                                </a>
-                            </div>
-                            <div class="align-content-around d-grid gap-1 text-center">
-                                <a class="text-uppercase small text-dark d-grid gap-1 text-decoration-none" href="#.">
-                                    <i class="fa fa-shopping-cart"></i>
-                                    Carrinho
-                                </a>
-                            </div>
+                            <?php } ?>
                         </div>
                     </div>
                 </div>
@@ -118,10 +108,12 @@
                 <div class="col-12">
                     <ul class="owl-carousel owl-theme menu-links list-inline mb-0">
                         <li class="nav-item">
-                            <a class="nav-link d-grid gap-1 align-items-center justify-content-center text-center" href="#">
-                                <img class="rounded-circle" src="https://via.placeholder.com/40x40"/>
-                                <span>Link</span>
+                        <?php while (have_rows('menus_do_topo', getPageIDBySlug('configuracoes-gerais'))){ the_row(); ?>
+                            <a class="nav-link d-grid gap-1 align-items-center justify-content-center text-center" href="<?php echo get_sub_field('link'); ?>">
+                                <img class="rounded-circle" src="<?php echo get_sub_field('imagem'); ?>"/>
+                                <span><?php echo get_sub_field('titulo'); ?></span>
                             </a>
+                        <?php } ?>
                         </li>
                     </ul>
                 </div>
