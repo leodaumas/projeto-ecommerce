@@ -107,14 +107,14 @@
             <div class="row">
                 <div class="col-12">
                     <ul class="owl-carousel owl-theme menu-links list-inline mb-0">
-                        <li class="nav-item">
                         <?php while (have_rows('menus_do_topo', getPageIDBySlug('configuracoes-gerais'))){ the_row(); ?>
+                            <li class="nav-item">
                             <a class="nav-link d-grid gap-1 align-items-center justify-content-center text-center" href="<?php echo get_sub_field('link'); ?>">
                                 <img class="rounded-circle" src="<?php echo get_sub_field('imagem'); ?>"/>
                                 <span><?php echo get_sub_field('titulo'); ?></span>
                             </a>
-                        <?php } ?>
                         </li>
+                        <?php } ?>
                     </ul>
                 </div>
             </div>
