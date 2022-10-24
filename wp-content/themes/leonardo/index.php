@@ -2,12 +2,12 @@
 
 <section>
     <div class="owl-carousel owl-theme banners">
-        <img alt="banner" class="w-auto img-fluid" src="https://via.placeholder.com/1900x500/111111"/>
-        <img alt="banner" class="w-auto img-fluid" src="https://via.placeholder.com/1900x500/222222"/>
-        <img alt="banner" class="w-auto img-fluid" src="https://via.placeholder.com/1900x500/333333"/>
-        <img alt="banner" class="w-auto img-fluid" src="https://via.placeholder.com/1900x500/444444"/>
-        <img alt="banner" class="w-auto img-fluid" src="https://via.placeholder.com/1900x500/555555"/>
-        <img alt="banner" class="w-auto img-fluid" src="https://via.placeholder.com/1900x500/777777"/>
+        <?php while (have_rows('banners', getPageIDBySlug('pagina-inicial'))) {
+            the_row(); ?>
+            <a href="<?php echo get_sub_field('link'); ?>">
+                <img alt="banner" class="w-auto img-fluid" src="<?php echo get_sub_field('banner_imagem'); ?>" />
+            </a>
+        <?php } ?>
     </div>
 </section>
 
@@ -16,33 +16,20 @@
         <div class="row">
             <div class="owl-carousel owl-theme vantagens">
 
-                <div class="bg-dark pb-3 text-center text-light h-100">
-                    <img alt="#." class="img-fluid" src="https://via.placeholder.com/300x150"/>
-                    <div class="mt-2">
-                        <span class="fw-bold text-uppercase text-center small">Cadastre-se e ganhe desconto</span>
-                    </div>
-                </div>
-
-                <div class="bg-dark pb-3 text-light text-center h-100">
-                    <img alt="#." class="img-fluid" src="https://via.placeholder.com/300x150"/>
-                    <div class="mt-2">
-                        <span class="fw-bold text-uppercase text-center small">Entrega em até 48h</span>
-                    </div>
-                </div>
-
-                <div class="bg-dark pb-3 text-light text-center h-100">
-                    <img alt="#." class="img-fluid" src="https://via.placeholder.com/300x150"/>
-                    <div class="mt-2">
-                        <span class="fw-bold text-uppercase text-center small">10% de desconto</span>
-                    </div>
-                </div>
-
-                <div class="bg-dark pb-3 text-light text-center h-100">
-                    <img alt="#." class="img-fluid" src="https://via.placeholder.com/300x150"/>
-                    <div class="mt-2">
-                        <span class="fw-bold text-uppercase text-center small">Parcele em até 10x no cartão</span>
-                    </div>
-                </div>
+                <?php while (have_rows('vantagens', getPageIDBySlug('pagina-inicial'))) {
+                    the_row(); ?>
+                    <?php while (have_rows('vantagem')) {
+                        the_row(); ?>
+                        <a class="text-decoration-none" href="<?php echo get_sub_field('link'); ?>">
+                            <div class="bg-dark pb-3 text-center text-light h-100">
+                                <img alt="<?php echo get_sub_field('titulo'); ?>" class="img-fluid" src="<?php echo get_sub_field('imagem'); ?>" />
+                                <div class="mt-2">
+                                    <span class="fw-bold text-uppercase text-center small"><?php echo get_sub_field('titulo'); ?></span>
+                                </div>
+                            </div>
+                        </a>
+                <?php }
+                } ?>
 
             </div>
         </div>
@@ -57,7 +44,7 @@
             <div class="owl-carousel owl-theme destaque-venda">
 
                 <div class="bg-light pb-4">
-                    <img alt="#." class="img-fluid" src="https://via.placeholder.com/300x250"/>
+                    <img alt="#." class="img-fluid" src="https://via.placeholder.com/300x250" />
                     <div class="px-3">
                         <div class="mb-3"><span class="fw-bold small lh-sm">Freezer Horizontal D/a Ghbs-50 Bn 532 Litros 2 Tampas Cega 127V - Gelopar</span></div>
                         <div class="text-decoration-line-through small"><span>R$ 5.027,54</span></div>
@@ -71,24 +58,43 @@
     </div>
 </section>
 
-<!-- Blocos destaque -->
+<!-- Categorias em destaque -->
 <section class="my-5">
     <div class="container">
         <div class="row">
 
+
+
             <div class="col-4">
                 <div>
-                    <img alt="#." class="img-fluid w-100" src="https://via.placeholder.com/600x827"/>
+                    <?php while (have_rows('categorias', getPageIDBySlug('pagina-inicial'))) {
+                        the_row(); ?>
+                        <?php while (have_rows('categoria_em_destaque')) {
+                            the_row(); ?>
+                            <a href="<?php echo get_sub_field('link'); ?>">
+                                <img alt="<?php echo get_sub_field('titulo'); ?>" class="w-auto img-fluid" src="<?php echo get_sub_field('imagem'); ?>" />
+                            </a>
+                    <?php }
+                    } ?>
                 </div>
             </div>
 
             <div class="col-8">
                 <div class="row">
-                    <div class="col-6 mb-3"><img alt="#." class="img-fluid w-100" src="https://via.placeholder.com/300x200"/></div>
-                    <div class="col-6 mb-3"><img alt="#." class="img-fluid w-100" src="https://via.placeholder.com/300x200"/></div>
 
-                    <div class="col-6"><img alt="#." class="img-fluid w-100" src="https://via.placeholder.com/300x200"/></div>
-                    <div class="col-6"><img alt="#." class="img-fluid w-100" src="https://via.placeholder.com/300x200"/></div>
+
+                    <?php while (have_rows('categorias', getPageIDBySlug('pagina-inicial'))) {
+                        the_row(); ?>
+                        <?php while (have_rows('mais_categorias')) {
+                            the_row(); ?>
+                            <div class="col-6 mb-3">
+                                <a href="<?php echo get_sub_field('link'); ?>">
+                                    <img alt="<?php echo get_sub_field('titulo'); ?>" class="img-fluid w-100" src="<?php echo get_sub_field('imagem'); ?>" />
+                                </a>
+                            </div>
+                    <?php }
+                    } ?>
+
                 </div>
             </div>
 
@@ -104,7 +110,7 @@
             <div class="owl-carousel owl-theme destaque-venda">
 
                 <div class="bg-light pb-4">
-                    <img alt="#." class="img-fluid" src="https://via.placeholder.com/300x250"/>
+                    <img alt="#." class="img-fluid" src="https://via.placeholder.com/300x250" />
                     <div class="px-3">
                         <div class="mb-3"><span class="fw-bold small lh-sm">Freezer Horizontal D/a Ghbs-50 Bn 532 Litros 2 Tampas Cega 127V - Gelopar</span></div>
                         <div class="text-decoration-line-through small"><span>R$ 5.027,54</span></div>
@@ -121,12 +127,12 @@
 <!-- Banner rodapé -->
 <section>
     <div class="owl-carousel owl-theme banners">
-        <img alt="banner" class="w-auto img-fluid" src="https://via.placeholder.com/1900x1000/111111"/>
-        <img alt="banner" class="w-auto img-fluid" src="https://via.placeholder.com/1900x1000/222222"/>
-        <img alt="banner" class="w-auto img-fluid" src="https://via.placeholder.com/1900x1000/333333"/>
-        <img alt="banner" class="w-auto img-fluid" src="https://via.placeholder.com/1900x1000/444444"/>
-        <img alt="banner" class="w-auto img-fluid" src="https://via.placeholder.com/1900x1000/555555"/>
-        <img alt="banner" class="w-auto img-fluid" src="https://via.placeholder.com/1900x1000/777777"/>
+        <?php while (have_rows('banners', getPageIDBySlug('pagina-inicial'))) {
+            the_row(); ?>
+            <a href="<?php echo get_sub_field('link'); ?>">
+                <img alt="banner" class="w-auto img-fluid" src="<?php echo get_sub_field('banner_imagem'); ?>" />
+            </a>
+        <?php } ?>
     </div>
 </section>
 
@@ -135,9 +141,17 @@
     <div class="container">
         <div class="row">
             <div class="owl-carousel owl-theme parceiros">
-                <div class="bg-dark text-center text-light h-100">
-                    <img alt="#." class="img-fluid" src="https://via.placeholder.com/150x100"/>
-                </div>
+                <?php while (have_rows('parceiros', getPageIDBySlug('pagina-inicial'))) {
+                    the_row(); ?>
+                    <?php while (have_rows('parceiro')) {
+                        the_row(); ?>
+                        <a class="text-decoration-none" href="<?php echo get_sub_field('link'); ?>">
+                            <div class="bg-dark text-center text-light h-100">
+                                <img alt="<?php echo get_sub_field('titulo'); ?>" class="img-fluid" src="<?php echo get_sub_field('imagem'); ?>" />
+                            </div>
+                        </a>
+                <?php }
+                } ?>
             </div>
         </div>
     </div>
