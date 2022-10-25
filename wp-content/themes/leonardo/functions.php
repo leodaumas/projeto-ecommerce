@@ -22,23 +22,23 @@ function getPageIDBySlug($slug) {
     }
 }
 
-// Product Custom Post Type
-function product_init() {
+// Produto Custom Post Type
+function produto_cpt() {
     // set up product labels
     $labels = array(
-        'name' => 'Products',
-        'singular_name' => 'Product',
-        'add_new' => 'Add New Product',
-        'add_new_item' => 'Add New Product',
-        'edit_item' => 'Edit Product',
-        'new_item' => 'New Product',
-        'all_items' => 'All Products',
-        'view_item' => 'View Product',
-        'search_items' => 'Search Products',
-        'not_found' =>  'No Products Found',
-        'not_found_in_trash' => 'No Products found in Trash', 
+        'name' => 'Produtos',
+        'singular_name' => 'Produto',
+        'add_new' => 'Adicionar novo produto',
+        'add_new_item' => 'Adicionar novo produto',
+        'edit_item' => 'Editar produto',
+        'new_item' => 'Novo produto',
+        'all_items' => 'Todos produtos',
+        'view_item' => 'Visualizar produto',
+        'search_items' => 'Buscar produtos',
+        'not_found' =>  'Nenhum produto encontrado',
+        'not_found_in_trash' => 'Nenhum produto encontrado na lixeira',
         'parent_item_colon' => '',
-        'menu_name' => 'Products',
+        'menu_name' => 'Produtos',
     );
     
     // register post type
@@ -49,25 +49,20 @@ function product_init() {
         'show_ui' => true,
         'capability_type' => 'post',
         'hierarchical' => false,
-        'rewrite' => array('slug' => 'product'),
         'query_var' => true,
-        'menu_icon' => 'dashicons-randomize',
+        'menu_icon' => 'dashicons-format-aside',
         'supports' => array(
             'title',
-            'editor',
-            'excerpt',
-            'trackbacks',
-            'custom-fields',
-            'comments',
-            'revisions',
-            'thumbnail',
-            'author',
-            'page-attributes'
+            'editor'
         )
     );
-    register_post_type( 'product', $args );
+    register_post_type( 'produtos', $args );
     
     // register taxonomy
-    register_taxonomy('product_category', 'product', array('hierarchical' => true, 'label' => 'Category', 'query_var' => true, 'rewrite' => array( 'slug' => 'product-category' )));
+    register_taxonomy(
+        'categoria-produtos',
+        'produtos',
+        array('hierarchical' => true, 'label' => 'Categorias'
+        ));
 }
-add_action( 'init', 'product_init' );
+add_action( 'init', 'produto_cpt' );
